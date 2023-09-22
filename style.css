@@ -1,0 +1,232 @@
+:root {
+  --main-bg-color: hsl(222, 26%, 31%);
+  --toggle-bg-color: hsl(223, 31%, 20%);
+  --calc-screen-color: hsl(224, 36%, 15%);
+  --key-bg-color: hsl(30, 25%, 89%);
+  --keypad-bg-color: hsl(223, 31%, 20%);
+  --action-key-bg-color: hsl(225, 21%, 49%);
+  --result-key-bg-color: hsl(6, 63%, 50%);
+  --num-key-color: hsl(221, 14%, 31%);
+  --action-key-color: hsl(0, 0%, 100%);
+  --num-key-shadow-color: hsl(28, 16%, 65%);
+  --action-key-shadow-color: hsl(224, 28%, 35%);
+  --result-key-shadow-color: hsl(6, 70%, 34%);
+  --text-color: hsl(0, 0%, 100%);
+  --result-text-color: hsl(0, 0%, 100%);
+}
+
+* {
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  transition: 0.2s ease;
+}
+
+main {
+  width: 20rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--text-color);
+}
+
+.calculator-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+.calculator-wrapper .theme-changer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.calculator-wrapper .theme-changer p {
+  color: var(--text-color);
+}
+.calculator-wrapper .theme-changer .toggle-wrapper {
+  width: 5rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 0.5rem;
+}
+.calculator-wrapper .theme-changer .toggle-wrapper > p {
+  letter-spacing: 1px;
+}
+.calculator-wrapper .theme-changer .toggle-wrapper p {
+  color: var(--text-color);
+  font-size: xx-small;
+}
+.calculator-wrapper .theme-changer .toggle-wrapper .toggle-track {
+  position: relative;
+  width: 2.2rem;
+  height: 0.8rem;
+  border-radius: 30px;
+  background-color: var(--keypad-bg-color);
+}
+.calculator-wrapper .theme-changer .toggle-wrapper .toggle-track .toggle-num {
+  font-size: xx-small;
+  position: absolute;
+  top: -100%;
+  left: 15%;
+}
+.calculator-wrapper .theme-changer .toggle-wrapper .toggle-track .toggle-thumb {
+  cursor: pointer;
+  position: absolute;
+  top: 22%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--result-key-bg-color);
+  transition: 0.2s ease;
+}
+.calculator-wrapper .screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 5rem;
+  border-radius: 5px;
+  background-color: var(--calc-screen-color);
+}
+.calculator-wrapper .screen .result {
+  height: 100%;
+  overflow-x: auto;
+}
+.calculator-wrapper .screen .result p {
+  color: var(--text-color);
+  font-size: 32px;
+  padding: 1.5rem 1rem 0 0;
+}
+.calculator-wrapper .keypad {
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  border-radius: 5px;
+  display: grid;
+  background-color: var(--keypad-bg-color);
+  grid-template-columns: repeat(4, 3.8rem);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 1rem;
+}
+.calculator-wrapper .keypad .key {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  font-size: 24px;
+  color: var(--num-key-color);
+  height: 2rem;
+  border-radius: 5px;
+  background-color: var(--key-bg-color);
+  box-shadow: 0 3px 0 0 var(--num-key-shadow-color);
+}
+.calculator-wrapper .keypad :is(.del, .reset) {
+  font-size: 20px;
+  color: var(--action-key-color);
+  background-color: var(--action-key-bg-color);
+  box-shadow: 0 3px 0 0 var(--action-key-shadow-color);
+}
+.calculator-wrapper .keypad .reset {
+  grid-column: 1/span 2;
+}
+.calculator-wrapper .keypad .answer {
+  font-size: 20px;
+  color: var(--result-text-color);
+  background-color: var(--result-key-bg-color);
+  box-shadow: 0 3px 0 0 var(--result-key-shadow-color);
+  grid-column: 3/span 2;
+}
+.calculator-wrapper :is(.key, .toggle-thumb):hover {
+  filter: brightness(1.3);
+}
+
+.theme-1 {
+  --main-bg-color: hsl(222, 26%, 31%);
+  --toggle-bg-color: hsl(223, 31%, 20%);
+  --calc-screen-color: hsl(224, 36%, 15%);
+  --key-bg-color: hsl(30, 25%, 89%);
+  --keypad-bg-color: hsl(223, 31%, 20%);
+  --action-key-bg-color: hsl(225, 21%, 49%);
+  --result-key-bg-color: hsl(6, 63%, 50%);
+  --num-key-color: hsl(221, 14%, 31%);
+  --action-key-color: hsl(0, 0%, 100%);
+  --num-key-shadow-color: hsl(28, 16%, 65%);
+  --action-key-shadow-color: hsl(224, 28%, 35%);
+  --result-key-shadow-color: hsl(6, 70%, 34%);
+  --text-color: hsl(0, 0%, 100%);
+  --result-text-color: hsl(0, 0%, 100%);
+}
+.theme-1 .toggle-thumb {
+  left: 10%;
+}
+
+.theme-2 {
+  --main-bg-color: hsl(0, 0%, 90%);
+  --toggle-bg-color: hsl(223, 31%, 20%);
+  --calc-screen-color: hsl(0, 0%, 93%);
+  --key-bg-color: hsl(30, 25%, 89%);
+  --keypad-bg-color: hsl(0, 5%, 81%);
+  --action-key-bg-color: hsl(185, 42%, 37%);
+  --result-key-bg-color: hsl(25, 98%, 40%);
+  --num-key-color: hsl(60, 10%, 19%);
+  --action-key-color: hsl(0, 0%, 100%);
+  --num-key-shadow-color: hsl(35, 11%, 61%);
+  --action-key-shadow-color: hsl(185, 58%, 25%);
+  --result-key-shadow-color: hsl(25, 99%, 27%);
+  --text-color: hsl(60, 10%, 19%);
+}
+.theme-2 .toggle-thumb {
+  left: 40%;
+}
+
+.theme-3 {
+  --main-bg-color: hsl(268, 75%, 9%);
+  --calc-screen-color: hsl(268, 71%, 12%);
+  --toggle-bg-color: hsl(223, 31%, 20%);
+  --key-bg-color: hsl(268, 47%, 21%);
+  --keypad-bg-color: hsl(268, 71%, 12%);
+  --action-key-bg-color: hsl(281, 89%, 26%);
+  --result-key-bg-color: hsl(176, 100%, 44%);
+  --num-key-color: hsl(52, 100%, 62%);
+  --action-key-color: hsl(0, 0%, 100%);
+  --num-key-shadow-color: hsl(290, 70%, 36%);
+  --action-key-shadow-color: hsl(285, 91%, 52%);
+  --result-key-shadow-color: hsl(177, 92%, 70%);
+  --text-color: hsl(52, 100%, 62%);
+  --result-text-color: hsl(198, 20%, 13%);
+}
+.theme-3 .toggle-thumb {
+  left: 70%;
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    width: 90vw;
+  }
+  .calculator-wrapper .keypad {
+    grid-template-columns: repeat(4, 18%);
+  }
+}/*# sourceMappingURL=style.css.map */
